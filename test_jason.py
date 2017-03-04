@@ -32,11 +32,8 @@ def display_two(obj):
             print ('{} {} = {}'.format(leading,key,val ))
    except AttributeError:
       print ("------ Leading with list --------")
-      listcount = 0
       for i in obj:
-          listcount += 1
-          print ("{} List Count -> [{}]".format(leading,listcount))
-          display_two(i)
+         process_list( i, "HEAD", leading)
    loopcount -= 1
 
 # data
