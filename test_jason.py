@@ -9,6 +9,14 @@ data = {
 }
 loopcount = 0
 
+def process_list(obj, key, pad):
+   listcount = 0
+   for i in obj:
+      print ("{} {} -> [{}]".format(pad, key, listcount))
+      display_two(i)
+      listcount += 1
+
+
 def display_two(obj):
    global loopcount
    loopcount += 1
@@ -19,11 +27,7 @@ def display_two(obj):
             print("{} {} ->".format(leading,key))
             display_two(val)
          elif isinstance(val, list):
-            listcount = 0
-            for i in val:
-               listcount += 1
-               print ("{} {} -> [{}]".format(leading,key,listcount))
-               display_two(i)
+            process_list(val, key, leading)
          else:
             print ('{} {} = {}'.format(leading,key,val ))
    except AttributeError:
