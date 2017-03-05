@@ -3,11 +3,6 @@
 import json
 import sys
 
-data = {
-   'name' : 'ACME',
-   'shares' : 100,
-   'price' : 542.23
-}
 loopcount = 0
 
 def process_list(obj, key, pad):
